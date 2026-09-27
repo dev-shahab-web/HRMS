@@ -1,0 +1,8 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+
+# NOTE: `onlyBuiltDependencies` lives in the root package.json (`pnpm` field),
+# which is what pnpm 10.0.x reads. pnpm 10 blocks lifecycle build scripts by
+# default; only the packages listed there are trusted to run theirs.
+

@@ -1,0 +1,42 @@
+{
+  "name": "hrms",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.0.0",
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint -- --fix",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "test:integration": "turbo run test:integration",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "db:generate": "pnpm --filter @hrms/database db:generate",
+    "db:migrate": "pnpm --filter @hrms/database db:migrate",
+    "db:studio": "pnpm --filter @hrms/database db:studio",
+    "seed": "pnpm --filter @hrms/database seed",
+    "clean": "turbo run clean && rimraf node_modules"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.2",
+    "@typescript/native": "npm:typescript@^7.0.2",
+    "eslint": "^10.11.0",
+    "prettier": "^3.9.9",
+    "rimraf": "^6.0.1",
+    "turbo": "^2.11.3",
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
+    "typescript-eslint": "^8.70.1",
+    "vitest": "^5.0.1"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild", "workerd", "@electric-sql/pglite", "sharp"]
+  }
+}
